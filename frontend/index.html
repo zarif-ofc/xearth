@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyTracker — 3D Earth</title>
+  <link rel="stylesheet" href="./style.css" />
+  <!-- MediaPipe Tasks Vision Bundle (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest/vision_bundle.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="viewport-container" id="viewport-container">
+    <!-- Hidden webcam stream for MediaPipe detection (active in background) -->
+    <video id="webcam" playsinline autoplay muted></video>
+
+    <!-- Layer 2: Three.js 3D Earth Globe -->
+    <canvas id="earth-canvas"></canvas>
+
+    <!-- Layer 3: Fingertip Points Overlay Canvas (Thumb & Index only) -->
+    <canvas id="output_canvas"></canvas>
+
+    <!-- Minimal Initial Loading Screen (fades out when ready) -->
+    <div class="loading-overlay" id="loading-overlay">
+      <div class="spinner"></div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript App Module (100% Client-Side) -->
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
